@@ -11,7 +11,7 @@
         android:id="@+id/watermarkImageView"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:src="@drawable/icon"
+        android:src="@mipmap/agri_icon"
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:layout_centerInParent="true"

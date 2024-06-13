@@ -10,17 +10,16 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.BulletSpan
 import android.text.style.StyleSpan
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.aspro.R
 import com.example.aspro.databinding.FragmentNotificationsBinding
 import java.util.regex.Pattern
 
-class NotificationsFragment : Fragment() {
+class   NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
     private val binding get() = _binding!!
@@ -50,24 +49,24 @@ class NotificationsFragment : Fragment() {
             if (userInput.isNotBlank() || selectedBitmap != null) {
                 val userMessage = ChatMessage(userInput, true, selectedBitmap)
                 chatAdapter.addMessage(userMessage)
-                scrollToBottom() // Scroll to the bottom after adding the user message
-                binding.editTextUserInput.setText("")  // Clear the EditText after getting the input
-                binding.editTextUserInput.isEnabled = false  // Disable EditText
-                binding.buttonSubmit.isEnabled = false  // Disable Submit button
-                binding.buttonSubmit.visibility = View.INVISIBLE // Hide Submit button
-                selectedBitmap = null // Clear selected image after sending
-                binding.imagePreviewIcon.visibility = View.GONE // Hide the image preview icon
-                binding.watermarkImageView.visibility = View.GONE // Hide the watermark
+                scrollToBottom()
+                binding.editTextUserInput.setText("")
+                binding.editTextUserInput.isEnabled = false
+                binding.buttonSubmit.isEnabled = false
+                binding.buttonSubmit.visibility = View.INVISIBLE
+                selectedBitmap = null
+                binding.imagePreviewIcon.visibility = View.GONE
+                binding.watermarkImageView.visibility = View.GONE
 
                 if (userMessage.bitmap != null) {
                     notificationsViewModel.generateImageResponse(userInput, userMessage.bitmap) { response ->
                         activity?.runOnUiThread {
                             val responseMessage = ChatMessage(response, false)
                             chatAdapter.addMessage(responseMessage)
-                            scrollToBottom() // Scroll to the bottom after adding the response message
-                            binding.editTextUserInput.isEnabled = true  // Enable EditText
-                            binding.buttonSubmit.isEnabled = true  // Enable Submit button
-                            binding.buttonSubmit.visibility = View.VISIBLE // Show Submit button
+                            scrollToBottom()
+                            binding.editTextUserInput.isEnabled = true
+                            binding.buttonSubmit.isEnabled = true
+                            binding.buttonSubmit.visibility = View.VISIBLE
                         }
                     }
                 } else {
@@ -75,10 +74,10 @@ class NotificationsFragment : Fragment() {
                         activity?.runOnUiThread {
                             val responseMessage = ChatMessage(response, false)
                             chatAdapter.addMessage(responseMessage)
-                            scrollToBottom() // Scroll to the bottom after adding the response message
-                            binding.editTextUserInput.isEnabled = true  // Enable EditText
-                            binding.buttonSubmit.isEnabled = true  // Enable Submit button
-                            binding.buttonSubmit.visibility = View.VISIBLE // Show Submit button
+                            scrollToBottom()
+                            binding.editTextUserInput.isEnabled = true
+                            binding.buttonSubmit.isEnabled = true
+                            binding.buttonSubmit.visibility = View.VISIBLE
                         }
                     }
                 }
@@ -92,7 +91,14 @@ class NotificationsFragment : Fragment() {
             startActivityForResult(intent, SELECT_IMAGE_REQUEST_CODE)
         }
 
+        setHasOptionsMenu(true)
+
         return root
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.action_search)?.isVisible = false
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -102,15 +108,15 @@ class NotificationsFragment : Fragment() {
                 SELECT_IMAGE_REQUEST_CODE -> {
                     val imageUri = data?.data
                     val originalBitmap = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, imageUri)
-                    val resizedBitmap = getResizedBitmap(originalBitmap, 200, 200) // Adjust size as needed
+                    val resizedBitmap = getResizedBitmap(originalBitmap, 200, 200)
                     selectedBitmap = resizedBitmap
-                    binding.imagePreviewIcon.visibility = View.VISIBLE // Show the image preview icon
+                    binding.imagePreviewIcon.visibility = View.VISIBLE
                 }
                 CAPTURE_IMAGE_REQUEST_CODE -> {
                     val originalBitmap = data?.extras?.get("data") as Bitmap
-                    val resizedBitmap = getResizedBitmap(originalBitmap, 200, 200) // Adjust size as needed
+                    val resizedBitmap = getResizedBitmap(originalBitmap, 200, 200)
                     selectedBitmap = resizedBitmap
-                    binding.imagePreviewIcon.visibility = View.VISIBLE // Show the image preview icon
+                    binding.imagePreviewIcon.visibility = View.VISIBLE
                 }
             }
         }
@@ -135,14 +141,14 @@ class NotificationsFragment : Fragment() {
             if (isBullet) {
                 spannable.setSpan(BulletSpan(16), start - 2, start - 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
                 cleanText.replace(matcher.start(1) - offset, matcher.start(2) - 2 - offset, "")
-                offset += 3  // Account for removal of "* **"
+                offset += 3
             } else {
                 cleanText.replace(matcher.start() - offset, matcher.start(2) - 2 - offset, "")
-                offset += 4  // Account for removal of "**"
+                offset += 4
             }
 
             cleanText.replace(matcher.end(2) - 2 - offset, matcher.end() - offset, "")
-            offset += 2  // Account for removal of "**"
+            offset += 2
             spannable.setSpan(StyleSpan(Typeface.BOLD), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
 

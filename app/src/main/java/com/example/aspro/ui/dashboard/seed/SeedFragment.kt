@@ -2,14 +2,14 @@ package com.example.aspro.ui.dashboard.seed
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aspro.DatabaseHelper
+import com.example.aspro.R
 import com.example.aspro.databinding.FragmentSeedBinding
 
 class SeedFragment : Fragment() {
@@ -28,21 +28,22 @@ class SeedFragment : Fragment() {
 
         databaseHelper = DatabaseHelper(requireContext())
 
-        // Setup RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         seedAdapter = SeedAdapter(databaseHelper.getAllSeeds().toMutableList(), ::onUpdateClicked, ::onDeleteClicked)
         binding.recyclerView.adapter = seedAdapter
 
-        // Add Seed button click listener
         binding.btnAddSeed.setOnClickListener {
             val intent = Intent(activity, SeedFormActivity::class.java)
             startActivity(intent)
         }
 
-        // Load seed data
-        loadSeedData()
-
+        setHasOptionsMenu(true)
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadSeedData()
     }
 
     private fun loadSeedData() {
@@ -57,21 +58,39 @@ class SeedFragment : Fragment() {
     }
 
     private fun onDeleteClicked(seed: Seed) {
-        // Show confirmation dialog
         AlertDialog.Builder(requireContext())
             .setMessage("Are you sure you want to delete this seed?")
-            .setPositiveButton("Yes") { dialog, which ->
+            .setPositiveButton("Yes") { _, _ ->
                 databaseHelper.deleteSeed(seed.id)
-                Toast.makeText(requireContext(), "Seed deleted successfully", Toast.LENGTH_SHORT).show()
                 loadSeedData()
+                showToast("Seed deleted")
             }
             .setNegativeButton("No", null)
             .show()
     }
 
-    override fun onResume() {
-        super.onResume()
-        loadSeedData()
+    private fun showToast(message: String) {
+        val toast = Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.BOTTOM, 0, 100)
+        toast.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                seedAdapter.filter.filter(newText)
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onDestroyView() {

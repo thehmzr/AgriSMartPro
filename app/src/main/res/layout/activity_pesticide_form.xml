@@ -44,7 +44,7 @@
                     android:id="@+id/pesticideName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Pesticide Name"
+                    android:hint="Enter Pesticide Name:  سپرے کا نام"
                     android:minHeight="56dp"
                     android:padding="10dp"
                     android:textColorHint="@color/design_default_color_secondary" />
@@ -61,7 +61,7 @@
                     android:id="@+id/company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Company Name"
+                    android:hint="Enter Company Name:   کمپنی"
                     android:minHeight="56dp"
                     android:padding="10dp"
                     android:textColorHint="@color/design_default_color_secondary" />
@@ -78,30 +78,14 @@
                     android:id="@+id/literKilogram"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Liter/Kilogram"
+                    android:hint="Liter/Kilogram:   لیٹر"
                     android:inputType="numberDecimal"
                     android:minHeight="56dp"
                     android:padding="10dp"
                     android:textColorHint="@color/design_default_color_secondary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Packing Litters Input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:paddingBottom="8dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/packingLitters"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Packing Litters"
-                    android:inputType="numberDecimal"
-                    android:minHeight="56dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/design_default_color_secondary" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Number of Packets Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -114,7 +98,7 @@
                     android:id="@+id/numberOfPackets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Number of Packets"
+                    android:hint="Number of Packets:   پیکٹس کی تعداد"
                     android:inputType="number"
                     android:minHeight="56dp"
                     android:padding="10dp"
@@ -132,7 +116,7 @@
                     android:id="@+id/pricePerPacking"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Price Per Packing"
+                    android:hint="Price Per Packing:  قیمت فی پیک"
                     android:inputType="numberDecimal"
                     android:minHeight="56dp"
                     android:padding="10dp"

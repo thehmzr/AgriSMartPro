@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#4E7D58</color> <!-- Replaced with Green -->
-    <color name="purple_500">#3A6843</color> <!-- Replaced with Green -->
-    <color name="purple_700">#2C5733</color> <!-- Replaced with Dark Green -->
-    <color name="teal_200">#2E8B57</color> <!-- Replaced with Green -->
-    <color name="teal_700">#1E5D3F</color> <!-- Replaced with Dark Green -->
+    <color name="purple_200">#a8bcc1</color>
+    <color name="purple_500">#335D5D</color>
+    <color name="purple_700">#335D5D</color>
+    <color name="teal_200">#629fab</color>
+    <color name="teal_700">#437e89</color>
+
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 
-    <color name="colorPrimary">#2E8B57</color> <!-- Dark Green -->
-    <color name="colorPrimaryVariant">#1E5D3F</color> <!-- Darker Green -->
+    <color name="colorPrimary">#437e89</color>
+    <color name="colorPrimaryVariant">#102c2c</color>
     <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorSecondary">#4E7D58</color> <!-- Medium Green -->
-    <color name="colorSecondaryVariant">#3A6843</color> <!-- Slightly Darker Green -->
+    <color name="colorSecondary">#1c464f</color>
+    <color name="colorSecondaryVariant">#123745</color>
     <color name="colorOnSecondary">#000000</color>
+
     <color name="colorError">#B00020</color>
     <color name="colorOnError">#FFFFFF</color>
-    <color name="colorBackground">#E6F2E8</color> <!-- Light Green Background -->
+    <color name="colorBackground">#E6F2E8</color>
     <color name="colorOnBackground">#000000</color>
-    <color name="colorSurface">#F5FFFA</color> <!-- Very Light Green Surface -->
+    <color name="colorSurface">#F5FFFA</color>
     <color name="colorOnSurface">#000000</color>
 
-    <color name="gray">#808080</color>
+    <color name="gray">#57696d</color>
+    <color name="darker_gray">#333333</color>
+    <color name="light_gray">#D3D3D3</color>
 </resources>

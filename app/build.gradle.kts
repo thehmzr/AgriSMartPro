@@ -1,5 +1,3 @@
-
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -62,7 +60,8 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation (libs.androidx.recyclerview)
+    implementation (libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -74,8 +73,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.core.splashscreen)
-    implementation (libs.firebase.auth.v2101)
-    implementation (libs.play.services.auth)
-    implementation (libs.generativeai)
+    implementation(libs.firebase.auth.v2101)
+    implementation(libs.play.services.auth)
+    implementation(libs.generativeai)
+
+
+
 
 }

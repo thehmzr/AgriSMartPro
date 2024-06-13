@@ -25,7 +25,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
+        window.statusBarColor = resources.getColor(R.color.purple_500)
         auth = FirebaseAuth.getInstance()
 
         val emailEditText: EditText = findViewById(R.id.emailEditText)
@@ -33,7 +33,7 @@ class SignInActivity : AppCompatActivity() {
         val signInButton: Button = findViewById(R.id.signInButton)
         val googleSignInButton: com.google.android.gms.common.SignInButton = findViewById(R.id.googleSignInButton)
         val forgotPasswordTextView: TextView = findViewById(R.id.forgotPasswordTextView)
-        val registerButton: Button = findViewById(R.id.registerButton)
+        val registerTextView: TextView = findViewById(R.id.registerTextView)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -42,6 +42,9 @@ class SignInActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+
+        setGoogleButtonText(googleSignInButton, "Sign in with Google")
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -60,9 +63,19 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        registerButton.setOnClickListener {
+        registerTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun setGoogleButtonText(signInButton: com.google.android.gms.common.SignInButton, buttonText: String) {
+        for (i in 0 until signInButton.childCount) {
+            val v = signInButton.getChildAt(i)
+            if (v is TextView) {
+                v.text = buttonText
+                return
+            }
         }
     }
 

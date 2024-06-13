@@ -2,14 +2,14 @@ package com.example.aspro.ui.dashboard.fertilizer
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aspro.DatabaseHelper
+import com.example.aspro.R
 import com.example.aspro.databinding.FragmentFertilizerBinding
 
 class FertilizerFragment : Fragment() {
@@ -42,7 +42,27 @@ class FertilizerFragment : Fragment() {
         // Load fertilizer data
         loadFertilizerData()
 
+        setHasOptionsMenu(true) // Enable options menu in fragment
+
         return root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                fertilizerAdapter.filter.filter(newText)
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun loadFertilizerData() {
