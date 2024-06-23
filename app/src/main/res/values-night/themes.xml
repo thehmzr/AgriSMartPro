@@ -30,18 +30,6 @@
     </style>
 
     <!-- Night theme for the base application theme -->
-    <style name="Theme.ASpro.Night" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <!-- Theme for SignInActivity -->
     <style name="Theme.ASpro.SignIn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -56,16 +44,6 @@
     </style>
 
     <!-- Night theme for SignInActivity -->
-    <style name="Theme.ASpro.SignIn.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <!-- Theme for ForgotPasswordActivity -->
     <style name="Theme.ASpro.ForgotPassword" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -80,16 +58,6 @@
     </style>
 
     <!-- Night theme for ForgotPasswordActivity -->
-    <style name="Theme.ASpro.ForgotPassword.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <!-- Theme for RegisterActivity -->
     <style name="Theme.ASpro.Register" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -104,16 +72,6 @@
     </style>
 
     <!-- Night theme for RegisterActivity -->
-    <style name="Theme.ASpro.Register.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@drawable/agri_splash1</item>
@@ -135,18 +93,6 @@
     </style>
 
     <!-- Night theme for SeedFormActivity -->
-    <style name="Theme.ASpro.SeedForm.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <style name="HintTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/gray</item>
@@ -166,18 +112,6 @@
     </style>
 
     <!-- Night theme for FertilizerFormActivity -->
-    <style name="Theme.ASpro.FertilizerForm.Night" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <style name="Theme.ASpro.PesticideForm" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/purple_500</item>
@@ -192,18 +126,6 @@
     </style>
 
     <!-- Night theme for PesticideFormActivity -->
-    <style name="Theme.ASpro.PesticideForm.Night" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <style name="Theme.ASpro.CropForm" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
@@ -218,18 +140,6 @@
     </style>
 
     <!-- Night theme for CropFormActivity -->
-    <style name="Theme.ASpro.CropForm.Night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/darker_gray</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/gray</item>
-        <item name="colorSecondaryVariant">@color/light_gray</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <style name="UpdateButtonStyle">
         <item name="android:textColor">@android:color/holo_blue_light</item>

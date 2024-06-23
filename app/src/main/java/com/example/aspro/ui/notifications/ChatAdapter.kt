@@ -51,12 +51,11 @@ class ChatAdapter(private val chatMessages: MutableList<ChatMessage>) :
                 holder.messageImageViewUser.visibility = View.GONE
             }
 
-            // Hide model message views
+
             holder.vectorImageViewModel.visibility = View.GONE
             holder.messageTextViewModel.visibility = View.GONE
             holder.messageImageViewModel.visibility = View.GONE
 
-            // Align the message container for user message
             val layoutParams = holder.messageTextViewUser.layoutParams as ConstraintLayout.LayoutParams
             layoutParams.startToStart = ConstraintLayout.LayoutParams.UNSET
             layoutParams.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
@@ -86,12 +85,10 @@ class ChatAdapter(private val chatMessages: MutableList<ChatMessage>) :
                 holder.messageImageViewModel.visibility = View.GONE
             }
 
-            // Hide user message views
             holder.vectorImageViewUser.visibility = View.GONE
             holder.messageTextViewUser.visibility = View.GONE
             holder.messageImageViewUser.visibility = View.GONE
 
-            // Align the message container for model response
             val layoutParams = holder.messageTextViewModel.layoutParams as ConstraintLayout.LayoutParams
             layoutParams.startToEnd = R.id.vectorImageViewModel
             layoutParams.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID

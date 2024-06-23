@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
         val forgotPasswordTextView: TextView = findViewById(R.id.forgotPasswordTextView)
         val registerTextView: TextView = findViewById(R.id.registerTextView)
 
-        // Configure Google Sign In
+        // Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()

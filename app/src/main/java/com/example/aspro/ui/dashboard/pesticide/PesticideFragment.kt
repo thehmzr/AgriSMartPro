@@ -33,7 +33,7 @@ class PesticideFragment : Fragment() {
         pesticideAdapter = PesticideAdapter(databaseHelper.getAllPesticides().toMutableList(), ::onUpdateClicked, ::onDeleteClicked)
         binding.recyclerView.adapter = pesticideAdapter
 
-        // Add Pesticide button click listener
+        // Add Pesticide button
         binding.btnAddPesticide.setOnClickListener {
             val intent = Intent(activity, PesticideFormActivity::class.java)
             startActivity(intent)
@@ -42,7 +42,7 @@ class PesticideFragment : Fragment() {
         // Load pesticide data
         loadPesticideData()
 
-        setHasOptionsMenu(true) // Enable options menu in fragment
+        setHasOptionsMenu(true)
 
         return root
     }
@@ -77,7 +77,7 @@ class PesticideFragment : Fragment() {
     }
 
     private fun onDeleteClicked(pesticide: Pesticide) {
-        // Show confirmation dialog
+
         AlertDialog.Builder(requireContext())
             .setMessage("Are you sure you want to delete this pesticide?")
             .setPositiveButton("Yes") { dialog, which ->

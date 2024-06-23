@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <!-- Model Message Views -->
+
     <ImageView
         android:id="@+id/vectorImageViewModel"
         android:layout_width="24dp"
@@ -43,7 +43,7 @@
         android:maxWidth="240dp"
         android:visibility="gone"/>
 
-    <!-- User Message Views -->
+
 
     <ImageView
         android:id="@+id/vectorImageViewUser"

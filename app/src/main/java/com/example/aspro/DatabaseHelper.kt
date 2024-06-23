@@ -178,7 +178,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return seedList
     }
 
-    // Function to get Seed by Name
     fun getSeedByName(name: String): Seed? {
         val db = this.readableDatabase
         val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_SEED WHERE $COLUMN_SEED_NAME = ?", arrayOf(name))
@@ -282,7 +281,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return fertilizerList
     }
 
-    ///////////////// pesticide
+    // pesticide
 
     fun insertPesticide(
         name: String,

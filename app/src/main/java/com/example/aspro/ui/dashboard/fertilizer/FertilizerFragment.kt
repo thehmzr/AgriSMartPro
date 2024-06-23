@@ -33,7 +33,7 @@ class FertilizerFragment : Fragment() {
         fertilizerAdapter = FertilizerAdapter(databaseHelper.getAllFertilizers().toMutableList(), ::onUpdateClicked, ::onDeleteClicked)
         binding.recyclerView.adapter = fertilizerAdapter
 
-        // Add Fertilizer button click listener
+        // Add Fertilizer
         binding.btnAddFertilizer.setOnClickListener {
             val intent = Intent(activity, FertilizerFormActivity::class.java)
             startActivity(intent)
@@ -42,7 +42,7 @@ class FertilizerFragment : Fragment() {
         // Load fertilizer data
         loadFertilizerData()
 
-        setHasOptionsMenu(true) // Enable options menu in fragment
+        setHasOptionsMenu(true) // Enable menu
 
         return root
     }

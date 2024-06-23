@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <!-- AppBar with Toolbar -->
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,7 +21,7 @@
             app:navigationIcon="@drawable/arrow_left" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- ScrollView for Form -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Pesticide Name Input -->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                     android:textColorHint="@color/design_default_color_secondary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Company Input -->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                     android:textColorHint="@color/design_default_color_secondary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Liter/Kilogram Input -->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
 
 
 
-            <!-- Number of Packets Input -->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                     android:textColorHint="@color/design_default_color_secondary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Price Per Packing Input -->
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                     android:textColorHint="@color/design_default_color_secondary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Save Button -->
+
             <Button
                 android:id="@+id/btnSave"
                 android:layout_width="match_parent"

@@ -30,16 +30,6 @@
     </style>
 
     <!-- Theme for SignInActivity -->
-    <style name="Theme.ASpro.SignIn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
 
     <!-- Theme for ForgotPasswordActivity -->
     <style name="Theme.ASpro.ForgotPassword" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -84,11 +74,6 @@
         <item name="toolbarStyle">@style/CustomToolbarStyle</item>
     </style>
 
-    <style name="HintTextStyle" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/gray</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
     <style name="Theme.ASpro.FertilizerForm" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -123,16 +108,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:windowNoTitle">true</item>
         <item name="toolbarStyle">@style/CustomToolbarStyle</item>
-    </style>
-
-    <style name="UpdateButtonStyle">
-        <item name="android:textColor">@android:color/holo_blue_light</item>
-        <item name="android:background">@drawable/button_update_outline</item>
-    </style>
-
-    <style name="DeleteButtonStyle">
-        <item name="android:textColor">@android:color/holo_red_light</item>
-        <item name="android:background">@drawable/button_delete_outline</item>
     </style>
 
     <style name="CustomTabText" parent="TextAppearance.Design.Tab">

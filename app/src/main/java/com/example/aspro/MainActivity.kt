@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         installSplashScreen()
 
-        // Initialize Firebase Auth
+        // Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Check if user is signed in (non-null) and update UI accordingly
+
         val currentUser = auth.currentUser
         if (currentUser == null) {
             // No user is signed in, navigate to SignInActivity
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up Toolbar
+        // Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 

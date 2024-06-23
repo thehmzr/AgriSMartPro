@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <!-- TabLayout for navigation -->
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         app:tabSelectedTextColor="@color/colorSecondary"
         app:tabTextColor="@color/colorPrimaryVariant" />
 
-    <!-- ViewPager2 to display fragments -->
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

@@ -4,76 +4,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/backgr_img">
+    android:background="@drawable/gradient_background">
+
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icon11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
 
     <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="Sign up to Continue"
-        android:textSize="24sp"
         android:textColor="@color/black"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <!-- Full Name EditText -->
     <EditText
         android:id="@+id/fullNameEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
         android:hint="Full Name"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_background"/>
 
     <!-- Email EditText -->
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/fullNameEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext_background"/>
 
     <!-- Password EditText -->
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext_background"/>
 
-    <!-- Confirm Password EditText -->
+
     <EditText
         android:id="@+id/confirmPasswordEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext_background"/>
 
-    <!-- Register Button -->
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="0dp"
@@ -83,17 +96,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"/>
-
-    <!-- Remember Me Checkbox -->
-    <CheckBox
-        android:id="@+id/rememberMeCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remember Me"
-        app:layout_constraintTop_toBottomOf="@+id/registerButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

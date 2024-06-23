@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
             logout()
         }
 
-        setHasOptionsMenu(false)  // Disable options menu
+        setHasOptionsMenu(false)
         return root
     }
 

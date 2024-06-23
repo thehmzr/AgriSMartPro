@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.pesticide.PesticideFragment">
 
-    <!-- RecyclerView for displaying pesticide items -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp" />
 
-    <!-- Button for adding new pesticide -->
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_add_pesticide"
         android:layout_width="wrap_content"

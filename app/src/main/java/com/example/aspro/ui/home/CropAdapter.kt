@@ -50,14 +50,14 @@ class CropAdapter(
             if (constraint == null || constraint.isEmpty()) {
                 filteredList.addAll(cropsFull)
             } else {
-                val filterPattern = constraint.toString().toLowerCase(Locale.ROOT).trim()
+                val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim()
 
                 for (item in cropsFull) {
-                    if (item.plotNumber.toLowerCase(Locale.ROOT).contains(filterPattern) ||
-                        item.landInPlot.toLowerCase(Locale.ROOT).contains(filterPattern) ||
-                        item.landUnit.toLowerCase(Locale.ROOT).contains(filterPattern) ||
-                        item.sowingDate.toLowerCase(Locale.ROOT).contains(filterPattern) ||
-                        item.seed.toLowerCase(Locale.ROOT).contains(filterPattern) ||
+                    if (item.plotNumber.lowercase(Locale.ROOT).contains(filterPattern) ||
+                        item.landInPlot.lowercase(Locale.ROOT).contains(filterPattern) ||
+                        item.landUnit.lowercase(Locale.ROOT).contains(filterPattern) ||
+                        item.sowingDate.lowercase(Locale.ROOT).contains(filterPattern) ||
+                        item.seed.lowercase(Locale.ROOT).contains(filterPattern) ||
                         item.seedQuantity.toString().contains(filterPattern) ||
                         item.landPreparationExpenses.toString().contains(filterPattern)) {
                         filteredList.add(item)

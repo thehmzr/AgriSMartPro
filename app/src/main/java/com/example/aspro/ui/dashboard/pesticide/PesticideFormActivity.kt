@@ -19,7 +19,6 @@ class PesticideFormActivity : AppCompatActivity() {
 
         databaseHelper = DatabaseHelper(this)
 
-        // Check if the activity was started to update an existing pesticide
         pesticideId = intent.getIntExtra("EXTRA_PESTICIDE_ID", -1)
         if (pesticideId != -1) {
             loadPesticideData(pesticideId)
@@ -29,7 +28,7 @@ class PesticideFormActivity : AppCompatActivity() {
             savePesticide()
         }
 
-        // Set the toolbar as the app bar for the activity
+        // Set the toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener {

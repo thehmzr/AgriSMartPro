@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:background="@drawable/gradient_background">
 
-    <!-- Logo -->
+
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="100dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"/>
 
-    <!-- Welcome Back Text -->
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
@@ -31,12 +31,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- Subtext -->
+
     <TextView
         android:id="@+id/subText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome , Login to continue!"
+        android:text="Welcome, Login to continue!"
         android:textSize="16sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText"
@@ -44,12 +44,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Email EditText -->
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter your mail"
+        android:hint="Enter your e-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/subText"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,12 +58,12 @@
         android:background="@drawable/rounded_edittext_background"
         android:padding="12dp"/>
 
-    <!-- Password EditText -->
+
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Enter Password"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
         android:background="@drawable/rounded_edittext_background"
         android:padding="12dp"/>
 
-    <!-- Forgot Password TextView -->
+
     <TextView
         android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
