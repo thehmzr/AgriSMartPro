@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         // Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-
         val currentUser = auth.currentUser
         if (currentUser == null) {
             // No user is signed in, navigate to SignInActivity

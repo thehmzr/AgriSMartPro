@@ -1,8 +1,10 @@
 package com.example.aspro
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +23,8 @@ class RegisterActivity : AppCompatActivity() {
         val passwordEditText: EditText = findViewById(R.id.passwordEditText)
         val confirmPasswordEditText: EditText = findViewById(R.id.confirmPasswordEditText)
         val registerButton: Button = findViewById(R.id.registerButton)
+        val backButton: ImageButton = findViewById(R.id.backButton)
+
 
         registerButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -35,9 +39,14 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             }
         }
+        backButton.setOnClickListener {
+            startActivity(Intent(this, SignInActivity::class.java))
+        }
+
     }
 
     private fun validateInputs(email: String, password: String): Boolean {
+        val passwordRegex = "^(?=.*[0-9])(?=.*[!@#\$%^&*])[A-Za-z0-9!@#\$%^&*]{8,}$"
         return when {
             email.isEmpty() -> {
                 Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show()
@@ -45,6 +54,10 @@ class RegisterActivity : AppCompatActivity() {
             }
             password.isEmpty() -> {
                 Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show()
+                false
+            }
+            !password.matches(passwordRegex.toRegex()) -> {
+                Toast.makeText(this, "Password: 8+ chars, 1 number, 1 special char.", Toast.LENGTH_LONG).show()
                 false
             }
             else -> true
@@ -59,7 +72,7 @@ class RegisterActivity : AppCompatActivity() {
                     user?.sendEmailVerification()?.addOnCompleteListener { verificationTask ->
                         if (verificationTask.isSuccessful) {
                             Toast.makeText(this, "Verification email sent to $email", Toast.LENGTH_SHORT).show()
-                            // Optionally, you can redirect the user to the sign-in screen
+                            //startActivity(Intent(this, SignInActivity::class.java))
                         } else {
                             Toast.makeText(this, "Failed to send verification email.", Toast.LENGTH_SHORT).show()
                         }

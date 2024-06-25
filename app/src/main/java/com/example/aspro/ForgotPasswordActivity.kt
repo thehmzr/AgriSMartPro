@@ -1,8 +1,10 @@
 package com.example.aspro
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +21,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         val emailEditText: EditText = findViewById(R.id.emailEditText)
         val resetPasswordButton: Button = findViewById(R.id.resetPasswordButton)
+        val backButton: ImageButton = findViewById(R.id.backButton)
 
         resetPasswordButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -28,7 +31,13 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter your email address", Toast.LENGTH_SHORT).show()
             }
         }
+
+        backButton.setOnClickListener {
+            startActivity(Intent(this, SignInActivity::class.java))
+        }
     }
+
+
 
     private fun resetPassword(email: String) {
         auth.sendPasswordResetEmail(email)
@@ -40,4 +49,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 }
             }
     }
+
+
+
 }

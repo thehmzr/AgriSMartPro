@@ -12,7 +12,7 @@ import com.google.ai.client.generativeai.type.content
 
 class NotificationsViewModel : ViewModel() {
 
-    private val apiKey = "AIzaSyCzcLGYQV4JwCMUDBN_WsG4AwDt2YBRya4   "
+    private val apiKey = "AIzaSyDIDgIO2S44KIUuzHkQw_Asi2TwNMPG8eE"
 
     fun generateResponse(prompt: String, callback: (String) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
